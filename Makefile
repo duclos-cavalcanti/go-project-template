@@ -2,26 +2,26 @@ SHELL := /bin/bash
 
 FILE := $(lastword $(MAKEFILE_LIST))
 DIR := "cmd/project"
-
 GO ?= go
 FMT ?= gofmt
 
 SRC ?= $(shell find $(DIR) -name "*.go" -type f)
-PROJECT := prj
 FLAGS ?= -trimpath -mod=readonly -modcacherw
 LDFLAGS ?=
+
+PROJECT := github.com/duclos-cavalcanti/go-project-template
 
 all:
 
 .PHONY: init
 init:
 	@echo "## Initializing Project ##"
-	$(GO) mod init example/hello
+	$(GO) mod init $(PROJECT)
 
 .PHONY: build
 build:
 	@echo "## Building Project ##"
-	$(GO) build $(FLAGS) -ldflags $(LDFLAGS) -o ${PROJECT}
+	$(GO) build $(FLAGS) -ldflags $(LDFLAGS) -o prj
 
 .PHONY: fmt
 fmt:
