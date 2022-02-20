@@ -5,7 +5,7 @@ GO ?= go
 FMT ?= gofmt
 
 SRC ?= $(shell find $(DIR) -name "*.go" -type f)
-FLAGS ?= -trimpath -mod=readonly -modcacherw
+FLAGS ?=
 LDFLAGS ?=
 
 PROJECT := github.com/duclos-cavalcanti/go-project-template
