@@ -5,5 +5,5 @@ also get acquainted with the langauge.
 
 ## Thanks
 
-- (go.dev/doc)[https://go.dev/doc/]
-- (go-project-example)[https://github.com/albertwidi/go-project-example]
+- [go.dev/doc](https://go.dev/doc/)
+- [go-project-example](https://github.com/albertwidi/go-project-example)
