@@ -13,6 +13,11 @@ func main() {
 	message := greetings.Welcome("Gladys")
 
 	hello.HelloWorld()
+	hello.HelloWorld()
+	hello.HelloWorld()
+	hello.HelloWorld()
+	hello.HelloWorld()
+
 	fmt.Println(message)
     fmt.Println(quote.Go())
 }

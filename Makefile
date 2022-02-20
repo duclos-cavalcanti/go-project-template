@@ -26,6 +26,12 @@ build:
 fmt:
 	$(FMT) -w $(SRC)
 
+# UNTESTED!
+.PHONY: test
+test:
+	@go generate -v ./...
+	@go test -race -v ./...
+
 .PHONY: tidy
 tidy:
 	$(GO) mod tidy
