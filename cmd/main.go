@@ -3,8 +3,8 @@ package main
 import(
     "fmt"
 
-	"github.com/duclos-cavalcanti/go-project-template/cmd/project/hello"
-	"github.com/duclos-cavalcanti/go-project-template/cmd/project/greetings"
+	"github.com/duclos-cavalcanti/go-project-template/cmd/hello"
+	"github.com/duclos-cavalcanti/go-project-template/cmd/greetings"
 )
 
 func main() {
