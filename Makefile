@@ -35,7 +35,10 @@ tidy:
 
 .PHONY: run
 run:
-	@echo "## Running Project ##"
-	@pushd $(DIR); \
-	pwd; \
-	popd
+	@cd $(DIR) && \
+		$(GO) run .
+
+.PHONY: clean
+clean:
+	@echo "## Cleaning Project ##"
+	$(GO) clean -modcache
