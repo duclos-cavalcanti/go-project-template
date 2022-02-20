@@ -1,41 +1,38 @@
 SHELL := /bin/bash
 
-DIR := "cmd/project"
+PROJECT := project
+MODULE := github.com/duclos-cavalcanti/go-project-template
+
 GO ?= go
 FMT ?= gofmt
+DIR := cmd
 
 SRC ?= $(shell find $(DIR) -name "*.go" -type f)
 FLAGS ?=
 LDFLAGS ?=
 
-PROJECT := github.com/duclos-cavalcanti/go-project-template
 
 all:
 
 .PHONY: init
 init:
-	@echo "## Initializing Project ##"
-	$(GO) mod init $(PROJECT)
+	$(GO) mod init $(MODULE)
 
 .PHONY: build
 build:
-	@echo "## Building Project ##"
-	$(GO) build $(FLAGS) -ldflags $(LDFLAGS) -o prj
+	$(GO) build -v -o $(PROJECT) $(FLAGS) cmd/*.go
 
 .PHONY: fmt
 fmt:
-	@echo "## Formatting Project ##"
 	$(FMT) -w $(SRC)
 
 .PHONY: tidy
 tidy:
-	@echo "## Running Project ##"
 	$(GO) mod tidy
 
 .PHONY: run
-run:
-	@cd $(DIR) && \
-		$(GO) run .
+run: build
+	@./$(PROJECT)
 
 .PHONY: clean
 clean:

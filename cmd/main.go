@@ -1,15 +1,18 @@
 package main
 
-import(
-    "fmt"
+import (
+	"fmt"
 
-	"github.com/duclos-cavalcanti/go-project-template/cmd/hello"
+    "rsc.io/quote"
+
 	"github.com/duclos-cavalcanti/go-project-template/cmd/greetings"
+	"github.com/duclos-cavalcanti/go-project-template/cmd/hello"
 )
 
 func main() {
-    message := greetings.Hello("Gladys")
+	message := greetings.Welcome("Gladys")
 
-    fmt.Println(message)
-    hello.helloWorld()
+	hello.HelloWorld()
+	fmt.Println(message)
+    fmt.Println(quote.Go())
 }
