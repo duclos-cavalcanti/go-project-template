@@ -5,6 +5,7 @@ MODULE := github.com/duclos-cavalcanti/go-project-template
 
 GO ?= go
 FMT ?= gofmt
+DEBUG ?= dlv debug
 DIR := cmd
 
 SRC ?= $(shell find $(DIR) -name "*.go" -type f)
@@ -25,6 +26,10 @@ build:
 .PHONY: fmt
 fmt:
 	$(FMT) -w $(SRC)
+
+.PHONY: debug
+debug:
+	$(DEBUG) ${DIR}/main.go
 
 # UNTESTED!
 .PHONY: test
