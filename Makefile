@@ -1,6 +1,5 @@
 SHELL := /bin/bash
 
-FILE := $(lastword $(MAKEFILE_LIST))
 DIR := "cmd/project"
 GO ?= go
 FMT ?= gofmt
