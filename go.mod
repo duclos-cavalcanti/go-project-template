@@ -1,3 +1,3 @@
-module github.com/duclos-cavalcanti/go-project-template/cmd/project/hello
+module github.com/duclos-cavalcanti/go-project-template
 
 go 1.17

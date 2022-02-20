@@ -11,5 +11,5 @@ func main() {
     message := greetings.Hello("Gladys")
 
     fmt.Println(message)
-    example.helloWorld()
+    hello.helloWorld()
 }

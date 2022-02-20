@@ -1,5 +1,3 @@
-module example.com/hello
+module github.com/duclos-cavalcanti/go-project-template/cmd/project/hello
 
 go 1.17
-
-replace example.com/hello => cmd/project/hello
