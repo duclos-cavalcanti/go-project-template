@@ -12,6 +12,7 @@ SRC ?= $(shell find $(DIR) -name "*.go" -type f)
 FLAGS ?=
 LDFLAGS ?=
 
+PWD ?= $(shell pwd)
 
 all:
 
@@ -42,6 +43,11 @@ test:
 .PHONY: cover
 cover:
 	@go test ./... -cover
+
+.PHONY: docs
+docs:
+	@godoc -http=:6060
+	@ # godoc -url http://localhost:6060/pkg/github.com/duclos-cavalcanti/go-project-template > docs/index.html
 
 .PHONY: tidy
 tidy:
