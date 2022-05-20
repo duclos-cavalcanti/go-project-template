@@ -23,29 +23,26 @@ init:
 build:
 	$(GO) build -v -o $(PROJECT) $(FLAGS) cmd/*.go
 
-.PHONY: fmt
-fmt:
-	$(FMT) -w $(SRC)
+.PHONY: run
+run: build
+	@./$(PROJECT)
 
 .PHONY: debug
 debug:
 	$(DEBUG) ${DIR}/main.go
 
-# UNTESTED!
+.PHONY: fmt
+fmt:
+	$(FMT) -w $(SRC)
+
 .PHONY: test
 test:
-	@go generate -v ./...
-	@go test -race -v ./...
+	@go test -v ./...
 
 .PHONY: tidy
 tidy:
 	$(GO) mod tidy
 
-.PHONY: run
-run: build
-	@./$(PROJECT)
-
 .PHONY: clean
 clean:
-	@echo "## Cleaning Project ##"
 	$(GO) clean -modcache
