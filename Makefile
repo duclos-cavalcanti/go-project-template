@@ -39,6 +39,10 @@ fmt:
 test:
 	@go test -v ./...
 
+.PHONY: cover
+cover:
+	@go test ./... -cover
+
 .PHONY: tidy
 tidy:
 	$(GO) mod tidy
